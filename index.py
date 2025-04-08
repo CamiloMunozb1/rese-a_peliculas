@@ -1,4 +1,5 @@
 from funcionalidad.ingreso_pelicula import IngresoDB, IngresoPelicula
+from funcionalidad.ingreso_reseña import IngresoDB, IngresoReseña
 
 
 
@@ -12,7 +13,9 @@ while True:
             1. Ingresa una pelicula o serie.
             2. Ingresa una reseña de la pelicula o serie.
             3. Ingresa una calificacion para la pelicula o serie.
-            4. Salir.
+            4. Eliminar pelicula.
+            5. Mostar peliculas o series registradas.
+            6. Salir.
         """
     )
     try:
@@ -26,14 +29,19 @@ while True:
             ingreso.nueva_pelicula()
             ingreso.subida_nube()
         elif usuario == "2":
-            print("Proxima funcionalidad.")
+            reseña = IngresoReseña(conexion)
+            reseña.nueva_reseña()
+            reseña.subida_nube()
         elif usuario == "3":
             print("Proxima funcionalidad.")
         elif usuario == "4":
-            print("Gracias por usar el calificador de peliculas.")
-            break
+            print("Proxima funcionalidad.")
+        elif usuario == "5":
+            print("Proxima funcionalidad.")
+        elif usuario == "6":
+            print("Gracias por reseñar tus peliculas o series favoritas.")
         else:
-            print("Ingresa una opcion valida entre 1 a 4.")
+            print("Ingresa una opcion valida entre 1 a 6.")
 
     except ValueError:
         print("Ingresa un valor valido.")
