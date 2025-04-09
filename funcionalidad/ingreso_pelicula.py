@@ -26,7 +26,7 @@ class IngresoPelicula:
                 return
         
             self.api_key = "TU_API_KEY"
-            self.database_id = "TU_BATABASE_ID"
+            self.database_id = "TU_API_KEY"
 
             self.conexion.cursor.execute("INSERT INTO movie_user(pelicula_name) VALUES (?)",(self.pelicula_name,))
             self.conexion.conn.commit()
