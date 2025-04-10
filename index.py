@@ -1,6 +1,5 @@
 from funcionalidad.ingreso_pelicula import IngresoDB, IngresoPelicula
-from funcionalidad.ingreso_reseña import IngresoDB, IngresoReseña
-from funcionalidad.calificacion_pelicula import IngresoDB, CalificacionPelicula
+
 
 
 
@@ -12,11 +11,9 @@ while True:
         """
             Bienvenido al calificador de peliculas o serie.
             1. Ingresa una pelicula o serie.
-            2. Ingresa una reseña de la pelicula o serie.
-            3. Ingresa una calificacion para la pelicula o serie.
-            4. Eliminar pelicula o serie.
-            5. Mostar peliculas o series registradas.
-            6. Salir.
+            2. Eliminar pelicula o serie.
+            3. Mostar peliculas o series registradas.
+            4. Salir.
         """
     )
     try:
@@ -28,21 +25,15 @@ while True:
         elif usuario == "1":
             ingreso = IngresoPelicula(conexion)
             ingreso.nueva_pelicula()
+            ingreso.nueva_reseña()
+            ingreso.calificacion_pelicula()
             ingreso.subida_nube()
         elif usuario == "2":
-            reseña = IngresoReseña(conexion)
-            reseña.nueva_reseña()
-            reseña.subida_nube()
+            print("Proxima funcionalidad.")
         elif usuario == "3":
-            calificacion = CalificacionPelicula(conexion)
-            calificacion.calificacion_contenido()
-            calificacion.subina_nube()
+            print("Proxima funcionalidad.")
         elif usuario == "4":
-            print("Proxima funcionalidad.")
-        elif usuario == "5":
-            print("Proxima funcionalidad.")
-        elif usuario == "6":
-            print("Gracias por reseñar tus peliculas o series favoritas.")
+            print("Gracias por usar el calificador de peliculas o series.")
             break
         else:
             print("Ingresa una opcion valida entre 1 a 6.")
