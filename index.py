@@ -1,6 +1,5 @@
 from funcionalidad.ingreso_pelicula import IngresoDB, IngresoPelicula
-
-
+from funcionalidad.eliminar_pelicula import IngresoDB, EliminarPelicula
 
 
 rutaDB = r"C:\Users\POWER\calificador_peliculas.db"
@@ -29,7 +28,9 @@ while True:
             ingreso.calificacion_pelicula()
             ingreso.subida_nube()
         elif usuario == "2":
-            print("Proxima funcionalidad.")
+            eliminar = EliminarPelicula(conexion)
+            eliminar.eliminacion_pelicula()
+            eliminar.archivar_nube()
         elif usuario == "3":
             print("Proxima funcionalidad.")
         elif usuario == "4":
