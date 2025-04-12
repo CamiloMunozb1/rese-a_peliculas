@@ -1,6 +1,6 @@
 from funcionalidad.ingreso_pelicula import IngresoDB, IngresoPelicula
 from funcionalidad.eliminar_pelicula import IngresoDB, EliminarPelicula
-
+from funcionalidad.mostrar_peliculas import IngresoDB, MostrarPeliculas
 
 rutaDB = r"C:\Users\POWER\calificador_peliculas.db"
 conexion = IngresoDB(rutaDB)
@@ -32,12 +32,15 @@ while True:
             eliminar.eliminacion_pelicula()
             eliminar.archivar_nube()
         elif usuario == "3":
-            print("Proxima funcionalidad.")
+            mostrar = MostrarPeliculas(conexion)
+            mostrar.peliculas_registradas()
         elif usuario == "4":
             print("Gracias por usar el calificador de peliculas o series.")
             break
         else:
-            print("Ingresa una opcion valida entre 1 a 6.")
+            print("Ingresa una opcion valida entre 1 a 4.")
+        
+        input("\nPresiona Enter para continuar...")
 
     except ValueError:
         print("Ingresa un valor valido.")
